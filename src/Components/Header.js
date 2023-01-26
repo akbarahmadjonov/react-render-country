@@ -1,6 +1,23 @@
+import { useEffect, useState } from "react";
+import "../styles/index.css";
+
 const Header = () => {
+  const [theme, setTheme] = useState("light");
+
+  const handleTheme = () => {
+    if (theme === "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+  // Dark mode
+
   return (
-    <header className="site-header p-3 shadow-sm">
+    <header className={`site-header p-3 shadow-sm ${theme}`}>
       <div className="spinner">
         <div className="loading"></div>
       </div>
@@ -11,7 +28,7 @@ const Header = () => {
             <i className="fa-solid fa-earth-asia"></i> World in your hand!
           </h2>
           <div className="dark-mode">
-            <button className="border-0 bg-transparent dark">
+            <button onClick={handleTheme} className="border-0 bg-transparent">
               <em className="fa-regular fa-moon"></em>
               Dark Mode
             </button>

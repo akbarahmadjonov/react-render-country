@@ -28,3 +28,25 @@ input[type="search"]::-webkit-search-cancel-button {
 .lab {
   position: relative;
 }
+
+.card:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+img {
+  transition: transform 0.4s;
+}
+
+.card:hover {
+  transform: scale(0.98);
+}
+
+.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.light {
+  background-color: #fff;
+  color: #333;
+}
