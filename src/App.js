@@ -10,7 +10,7 @@ function App() {
   let SelectVal = useRef();
 
   const [countries, setCountries] = useState({
-    isLoading: false,
+    isLoading: true,
     data: [],
     isError: "",
   });
@@ -111,7 +111,13 @@ function App() {
         </div>
       </section>
 
-      {countries.isLoading ? <h1>Loading....</h1> : ""}
+      {countries.isLoading ? (
+        <div id="loading-bar-spinner" class="spinner">
+          <div class="spinner-icon"></div>
+        </div>
+      ) : (
+        ""
+      )}
       {countries.isError ? <h1>{countries.isError}</h1> : ""}
       {countries.data.length ? (
         <div className="container">
