@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import "../styles/index.css";
 
 const Header = () => {
-  const [theme, setTheme] = useState("light");
-
+  const [theme, setTheme] = useState("");
   const handleTheme = () => {
     if (theme === "light") {
       setTheme("dark");
@@ -24,11 +23,16 @@ const Header = () => {
       <div className="container w-100">
         <h1 className="visually-hidden">Where in the world</h1>
         <div className="site-header__inner d-flex align-items-center justify-content-between">
-          <h2 className="h5 m-0">
+          <h2 className={`h5 m-0 ${theme ? "text-light" : "text-dark"}`}>
             <i className="fa-solid fa-earth-asia"></i> World in your hand!
           </h2>
           <div className="dark-mode">
-            <button onClick={handleTheme} className="border-0 bg-transparent">
+            <button
+              onClick={handleTheme}
+              className={`border-0 bg-transparent ${
+                theme ? "text-light" : "text-dark"
+              }`}
+            >
               <em className="fa-regular fa-moon"></em>
               Dark Mode
             </button>

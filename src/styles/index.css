@@ -43,10 +43,14 @@ img {
 
 .dark {
   background-color: #333;
-  color: #fff;
+  color: #333;
 }
-
 .light {
   background-color: #fff;
   color: #333;
+}
+
+.form-select:focus {
+  background-color: #e6e6e6 !important;
+  color: #333 !important;
 }
