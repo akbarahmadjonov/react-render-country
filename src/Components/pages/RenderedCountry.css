@@ -1,0 +1,18 @@
+.back-btn {
+  /* Margin, paddings */
+  padding: 10px 50px;
+
+  font-size: 20px;
+  border: none !important;
+  outline: none;
+  border-radius: 5px;
+  background-color: #eef3f8;
+}
+
+.back-btn:hover {
+  background-color: #d3e4f5;
+}
+
+.back-btn:active {
+  background-color: #d5d9de;
+}
