@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 const Card = ({ obj }) => {
   return (
-    <Link to={"/single/" + obj.name.common}>
-      <li className="col-md-3">
+    <li className="col-md-3">
+      <Link className="text-decoration-none text-dark" to={"/single/" + obj.name.common}>
         <div className="card">
           <img
             className="card-img-top"
@@ -28,8 +28,8 @@ const Card = ({ obj }) => {
             </p>
           </div>
         </div>
-      </li>
-    </Link>
+      </Link>
+    </li>
   );
 };
 export default Card;
