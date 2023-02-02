@@ -1,5 +1,5 @@
 import "../RenderedCountry.css";
-import img from "../../../assets/images/belgium.svg";
+import "../../../styles/index.css";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -11,6 +11,7 @@ export const RenderCountry = () => {
   const { name } = useParams();
   const [country, setCountry] = useState({
     data: [],
+    isLoading: true,
   });
 
   const getCountry = () => {
@@ -20,6 +21,7 @@ export const RenderCountry = () => {
         if (data) {
           setCountry({
             data: data,
+            isLoading: false,
           });
         }
       })
@@ -33,6 +35,13 @@ export const RenderCountry = () => {
   return (
     <>
       <div>
+        {country.isLoading ? (
+          <div id="loading-bar-spinner" class="spinner">
+            <div class="spinner-icon"></div>
+          </div>
+        ) : (
+          ""
+        )}
         {country.data.map((baseCountry, index) => (
           <div key={index} className="container">
             <div className="d-flex align-items-center">
