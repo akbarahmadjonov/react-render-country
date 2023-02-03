@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import "../styles/index.css";
 
 const Header = () => {
-  const [theme, setTheme] = useState("");
+  const [theme, setTheme] = useState(localStorage.getItem("theme"));
+  localStorage.setItem("theme", theme);
   const handleTheme = () => {
     if (theme === "light") {
       setTheme("dark");
